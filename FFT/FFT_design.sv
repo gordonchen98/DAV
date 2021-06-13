@@ -57,12 +57,9 @@ module FFT_design(clk_in, reset, new_t, pt0, pt1, pt2, pt3,
 		end
 	end
 	
-	//always @ (posedge done) begin
-	
 	assign freq0 = out0[31:16];
 	assign freq1 = out2[31:16];
 	assign freq2 = out1[31:16];
 	assign freq3 = out3[31:16];
-	//end
 
 endmodule 

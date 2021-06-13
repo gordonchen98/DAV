@@ -38,8 +38,8 @@ module FFT_design(clk_in, reset, new_t, pt0, pt1, pt2, pt3,
 				butterfly_in1 = {{6{pt2[9]}}, pt2, 16'b0};
 				butterfly_in2 = {{6{pt1[9]}}, pt1, 16'b0};
 				butterfly_in3 = {{6{pt3[9]}}, pt3, 16'b0};
-				twiddle_in0 = 'h00010000;
-				twiddle_in1 = 'h00010000;
+				twiddle_in0 = 'h7FFF0000;
+				twiddle_in1 = 'h7FFF0000;
 				counter = 0;
 				done = 0;
 			end
@@ -49,8 +49,8 @@ module FFT_design(clk_in, reset, new_t, pt0, pt1, pt2, pt3,
 				butterfly_in1 = out2;
 				butterfly_in2 = out1;
 				butterfly_in3 = out3;
-				twiddle_in0 = 'h00010000;
-				twiddle_in1 = 'h00000001;
+				twiddle_in0 = 'h7FFF0000;
+				twiddle_in1 = 'h00008000;
 				counter = 1;
 				done = 1;
 			end

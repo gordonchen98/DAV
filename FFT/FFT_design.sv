@@ -4,7 +4,7 @@ module FFT_design(clk_in, reset, new_t, pt0, pt1, pt2, pt3,
 						freq0, freq1, freq2, freq3, done);
 	input clk_in, reset, new_t;
 	input [9:0] pt0, pt1, pt2, pt3;
-	output reg [15:0] freq0, freq1, freq2, freq3;
+	output [15:0] freq0, freq1, freq2, freq3;
 	output reg done; // 0: false; 1: true
 	
 	reg [31:0] butterfly_in0, butterfly_in1, butterfly_in2, butterfly_in3;
@@ -57,11 +57,12 @@ module FFT_design(clk_in, reset, new_t, pt0, pt1, pt2, pt3,
 		end
 	end
 	
-	always @ (posedge done) begin
-		freq0 = out0[31:16];
-		freq1 = out2[31:16];
-		freq2 = out1[31:16];
-		freq3 = out3[31:16];
-	end
+	//always @ (posedge done) begin
+	
+	assign freq0 = out0[31:16];
+	assign freq1 = out2[31:16];
+	assign freq2 = out1[31:16];
+	assign freq3 = out3[31:16];
+	//end
 
 endmodule 
